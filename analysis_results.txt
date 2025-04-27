@@ -1,0 +1,78 @@
+Log Entry: 192.168.1.1 - - [05/Dec/2024:10:30:45 +0000] "GET /index.php?id=123 HTTP/1.1" 200 532
+Prediction: 0
+
+Log Entry: 203.0.113.22 - - [05/Dec/2024:10:31:12 +0000] "GET /search?q=how+to+learn+python HTTP/1.1" 200 678
+Prediction: 0
+
+Log Entry: 10.0.0.5 - - [05/Dec/2024:10:32:08 +0000] "GET /index.php?id=1 OR 1=1 -- HTTP/1.1" 500 12
+Prediction: 1
+
+Log Entry: 192.168.1.10 - - [05/Dec/2024:10:33:21 +0000] "POST /login HTTP/1.1" 200 345
+Prediction: 1
+
+Log Entry: 203.0.113.45 - - [05/Dec/2024:10:34:50 +0000] "GET /profile.php?user=admin HTTP/1.1" 200 421
+Prediction: 1
+
+Log Entry: 192.168.1.15 - - [05/Dec/2024:10:35:35 +0000] "GET /product.php?id=-1 UNION SELECT username, password FROM users HTTP/1.1" 500 87
+Prediction: 1
+
+Log Entry: 10.0.0.6 - - [05/Dec/2024:10:36:10 +0000] "GET /search?q=<script>alert('XSS')</script> HTTP/1.1" 403 44
+Prediction: 0
+
+Log Entry: 192.168.1.7 - - [05/Dec/2024:10:37:05 +0000] "GET /about-us HTTP/1.1" 200 320
+Prediction: 1
+
+Log Entry: 10.0.0.2 - - [05/Dec/2024:10:38:42 +0000] "GET /login.php?username=admin' AND password='' -- HTTP/1.1" 401 23
+Prediction: 1
+
+Log Entry: 203.0.113.90 - - [05/Dec/2024:10:39:15 +0000] "GET /contact-us HTTP/1.1" 200 210
+Prediction: 0
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:34:56 +0000] "GET / SQL Injection /Payload: select * from users where id = '1' or @@1 = 1 union select 1,version() -- HTTP/1.1" 500 120
+Prediction: 1
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:35:12 +0000] "GET / SQL Injection /Payload: select * from users where id = 1 or 1# union select 1,version() -- HTTP/1.1" 500 130
+Prediction: 1
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:36:22 +0000] "GET / SQL Injection /Payload: select name from syscolumns where id = (select id from sysobjects where name = tablename') -- HTTP/1.1" 500 135
+Prediction: 1
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:37:00 +0000] "GET / SQL Injection /Payload: select * from users where id = 1 +$+ or 1 = 1 -- HTTP/1.1" 500 140
+Prediction: 1
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:38:45 +0000] "GET / SQL Injection /Payload: 1; (load_file(char(47,101,116,99,47,112,97,115,115,119,100))) ,1,1,1; 1 HTTP/1.1" 500 145
+Prediction: 1
+
+Log Entry: 192.168.1.1 - - [05/Dec/2024:12:39:10 +0000] "GET / SQL Injection /Payload: select * from users where id = '1' or ||/1 = 1 union select 1,version() -- HTTP/1.1" 500 150
+Prediction: 1
+
+Log Entry: 192.168.1.100 - - [05/Dec/2024:12:40:00 +0000] "GET /login.php?username=admin&password=admin123 HTTP/1.1" 200 200
+Prediction: 1
+
+Log Entry: 192.168.1.101 - - [05/Dec/2024:12:41:15 +0000] "POST /login.php HTTP/1.1" 302 300
+Prediction: 0
+
+Log Entry: 192.168.1.102 - - [05/Dec/2024:12:42:30 +0000] "GET /index.php?page=home HTTP/1.1" 200 220
+Prediction: 0
+
+Log Entry: 192.168.1.103 - - [05/Dec/2024:12:43:45 +0000] "POST /search.php?query=malicious_query&submit=Search HTTP/1.1" 500 210
+Prediction: 0
+
+Log Entry: 192.168.1.104 - - [05/Dec/2024:12:44:55 +0000] "GET /register.php HTTP/1.1" 200 180
+Prediction: 0
+
+Log Entry: 192.168.1.105 - - [05/Dec/2024:12:46:00 +0000] "POST /update_profile.php HTTP/1.1" 200 230
+Prediction: 0
+
+Log Entry: 192.168.1.106 - - [05/Dec/2024:12:47:20 +0000] "GET /admin.php?dashboard HTTP/1.1" 403 250
+Prediction: 1
+
+Log Entry: 192.168.1.107 - - [05/Dec/2024:12:48:30 +0000] "POST /submit_form.php HTTP/1.1" 200 190
+Prediction: 0
+
+Log Entry: 192.168.1.108 - - [05/Dec/2024:12:49:40 +0000] "GET /product.php?id=12345 HTTP/1.1" 200 210
+Prediction: 1
+
+Log Entry: 192.168.1.109 - - [05/Dec/2024:12:50:55 +0000] "POST /login.php?username=guest&password=guest123 HTTP/1.1" 200 215
+Prediction: 0
+
